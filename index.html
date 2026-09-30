@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QSR News — 2026 Fall Edition · INFORMS Annual Meeting Special</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1612;
+    --ink-soft: #4a443d;
+    --paper: #f5f1ea;
+    --paper-warm: #ebe4d6;
+    --rule: #d9d0bd;
+    --accent: #b8341a;
+    --accent-soft: #e8a89a;
+    --gold: #8a6f1f;
+    --urgent: #b8341a;
+    --safe: #4a6b3a;
+    --tbd: #f4d35e;
+    --tbd-ink: #6b5a14;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter Tight', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 1px 1px, rgba(26,22,18,0.04) 1px, transparent 0);
+    background-size: 3px 3px;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ============ MASTHEAD ============ */
+  .masthead {
+    border-bottom: 1px solid var(--ink);
+    padding: 28px 48px 20px;
+    position: relative;
+    background: var(--paper);
+    z-index: 10;
+  }
+
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+
+  .masthead h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(56px, 9vw, 132px);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    font-variation-settings: "opsz" 144;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  .masthead-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 3px double var(--ink);
+  }
+
+  .masthead-tag {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+  }
+
+  .masthead-tag strong {
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .vol-info {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-align: right;
+    color: var(--ink-soft);
+    letter-spacing: 0.05em;
+  }
+
+  /* ============ SEARCH ============ */
+  .search-zone {
+    padding: 16px 48px;
+    background: var(--paper-warm);
+    border-bottom: 1px solid var(--rule);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    backdrop-filter: blur(8px);
+  }
+
+  .search-wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .search-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  #searchInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--ink);
+    padding: 6px 4px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink);
+    outline: none;
+  }
+
+  #searchInput::placeholder {
+    color: var(--ink-soft);
+    opacity: 0.6;
+  }
+
+  .search-stats {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    min-width: 80px;
+    text-align: right;
+  }
+
+  /* ============ LAYOUT ============ */
+  .layout {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 48px;
+    gap: 48px;
+  }
+
+  /* ============ TOC ============ */
+  .toc {
+    position: sticky;
+    top: 60px;
+    align-self: start;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    padding: 32px 0;
+    border-right: 1px solid var(--rule);
+    padding-right: 24px;
+    font-size: 13px;
+  }
+
+  .toc::-webkit-scrollbar { width: 4px; }
+  .toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+  .toc-heading {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; margin-bottom: 2px; }
+
+  .toc a {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 6px 0;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    line-height: 1.3;
+    transition: all 0.2s;
+    border-left: 2px solid transparent;
+    padding-left: 8px;
+  }
+
+  .toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--rule);
+  }
+
+  .toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+  .toc a.active { color: var(--ink); border-left-color: var(--accent); font-weight: 600; }
+
+  /* ============ MAIN ============ */
+  main {
+    padding: 48px 0 120px;
+    max-width: 800px;
+  }
+
+  section {
+    margin-bottom: 80px;
+    scroll-margin-top: 80px;
+  }
+
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    font-variation-settings: "opsz" 100;
+  }
+
+  h2 em { font-style: italic; color: var(--accent); font-weight: 300; }
+
+  h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+
+  p { margin-bottom: 18px; max-width: 65ch; }
+
+  p.lede {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    line-height: 1.45;
+    font-weight: 300;
+    margin-bottom: 28px;
+    font-style: italic;
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+  }
+
+  a.inline-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent);
+  }
+
+  a.inline-link:hover { background: var(--accent-soft); }
+
+  /* ============ CHAIR BLOCK ============ */
+  .chair-block {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+    align-items: start;
+  }
+
+  .chair-portrait {
+    width: 120px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--paper-warm), var(--rule));
+    border: 1px solid var(--ink);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .chair-portrait::before {
+    content: "PHOTO";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.15em;
+    z-index: 0;
+  }
+
+  .chair-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  .signature {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 24px;
+  }
+
+  .signature-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  /* ============ ICQSR HERO BANNER ============ */
+  .icqsr-hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 40px 36px;
+    margin-bottom: 32px;
+    position: relative;
+  }
+
+  .icqsr-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 12px;
+  }
+
+  .icqsr-title {
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.05;
+    margin-bottom: 16px;
+  }
+
+  .icqsr-title strong {
+    color: var(--accent-soft);
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .icqsr-deck {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--paper-warm);
+    max-width: 56ch;
+    margin-bottom: 24px;
+  }
+
+  .icqsr-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(245,241,234,0.2);
+  }
+
+  .icqsr-meta-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-soft);
+  }
+
+  .icqsr-meta-value {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--paper);
+    margin-top: 4px;
+    letter-spacing: 0;
+    text-transform: none;
+    font-style: italic;
+  }
+
+  .icqsr-cta {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--paper);
+    padding: 12px 28px;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 24px;
+  }
+
+  .icqsr-cta:hover { background: var(--accent-soft); color: var(--ink); }
+
+  /* ============ KEYNOTE GRID ============ */
+  .keynote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    margin: 16px 0 24px;
+  }
+
+  /* Board roster: fixed 4-per-row so every card (and photo) is the same size,
+     no matter how many people are in each group */
+  .board-grid {
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: start;
+  }
+  @media (max-width: 900px) {
+    .board-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .board-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .keynote-mini {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .keynote-mini-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, var(--paper-warm), var(--rule));
+    border: 1px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .keynote-mini-photo::before {
+    content: "PHOTO";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ink-soft);
+    letter-spacing: 0.15em;
+    z-index: 0;
+  }
+
+  .keynote-mini-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+
+  .keynote-mini-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  .keynote-mini-aff {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+
+  /* ============ COMPETITION CARDS ============ */
+  .comp-row {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .comp-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+  }
+
+  .comp-name {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  .comp-name a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+  .comp-name a:hover { border-bottom-color: var(--accent); color: var(--accent); }
+
+  .comp-desc {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
+  .deadline-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 6px 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    border: 1px solid;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .deadline-badge.urgent {
+    background: var(--urgent);
+    color: var(--paper);
+    border-color: var(--urgent);
+  }
+
+  .deadline-badge.soon {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  /* upcoming (date known, but still far off) */
+  .deadline-badge.upcoming {
+    color: var(--ink-soft);
+    border-color: var(--rule);
+  }
+
+  /* deadline has passed */
+  .deadline-badge.passed {
+    color: var(--ink-soft);
+    border-color: var(--rule);
+    background: transparent;
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+
+  /* tiny relative-time caption shown under urgent/soon badges */
+  .deadline-sub {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 0.08em;
+    margin-top: 3px;
+    opacity: 0.85;
+    text-transform: uppercase;
+  }
+
+  /* ============ TIMELINE ============ */
+  .timeline {
+    margin: 24px 0;
+    border-left: 2px solid var(--ink);
+    padding-left: 24px;
+  }
+
+  .timeline-item {
+    margin-bottom: 18px;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -32px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+  }
+
+  .timeline-item.urgent::before { background: var(--urgent); border-color: var(--urgent); }
+  .timeline-item.major::before { background: var(--accent); border-color: var(--accent); }
+  .timeline-item.passed::before { background: var(--rule); border-color: var(--rule); }
+  .timeline-item.passed { opacity: 0.5; }
+  .timeline-item.passed .timeline-event { text-decoration: line-through; }
+
+  .timeline-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 2px;
+  }
+
+  .timeline-event {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  /* ============ MEMBER HIGHLIGHTS ============ */
+  .highlight-item {
+    padding: 14px 0;
+    border-bottom: 1px dotted var(--rule);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .highlight-item:last-child { border-bottom: none; }
+
+  .highlight-name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .highlight-aff {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    margin-left: 6px;
+  }
+
+  .highlight-desc {
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+
+  /* ============ CFP CARDS ============ */
+  .cfp-card {
+    background: var(--paper-warm);
+    border: 1px solid var(--ink);
+    padding: 18px 22px;
+    margin-bottom: 14px;
+  }
+
+  .cfp-journal {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .cfp-title {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .cfp-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--rule);
+    font-size: 12px;
+  }
+
+  .cfp-deadline {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+  }
+
+  .cfp-deadline.urgent { color: var(--urgent); }
+  .cfp-deadline.passed { color: var(--ink-soft); text-decoration: line-through; opacity: 0.65; }
+  .cfp-deadline .cfp-relative {
+    font-weight: 400;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 6px;
+    opacity: 0.8;
+  }
+
+  /* ============ PULL QUOTE ============ */
+  .pullquote {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    line-height: 1.25;
+    font-weight: 300;
+    font-style: italic;
+    margin: 40px 0;
+    padding: 28px 0;
+    border-top: 3px double var(--ink);
+    border-bottom: 3px double var(--ink);
+    text-align: center;
+  }
+
+  .pullquote-attr {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-top: 14px;
+    display: block;
+  }
+
+  /* ============ TBD ============ */
+  .tbd {
+    background: var(--tbd);
+    color: var(--tbd-ink);
+    padding: 2px 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    display: inline-block;
+    border-radius: 2px;
+  }
+
+  .tbd-block {
+    background: rgba(244, 211, 94, 0.18);
+    border-left: 3px solid var(--tbd);
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--tbd-ink);
+  }
+
+  .tbd-block::before {
+    content: "⚠ NEEDED";
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  /* ============ SPONSORS ============ */
+  .sponsor-tier { margin-bottom: 28px; }
+
+  .sponsor-tier-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 8px;
+  }
+
+  .sponsor-tier-amount {
+    color: var(--ink-soft);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .sponsor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+  }
+
+  .sponsor-logo {
+    aspect-ratio: 3 / 2;
+    border: 1px solid var(--rule);
+    background: var(--paper-warm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .sponsor-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+  .sponsor-individual {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+  }
+
+  /* ============ CREDIT ============ */
+  .footer-credit {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+  }
+
+  /* ============ HIGHLIGHT (search) ============ */
+  .hl-mark { background: var(--accent-soft); padding: 2px 4px; }
+  .dimmed { opacity: 0.25; transition: opacity 0.2s; }
+
+  /* ============ FOOTER ============ */
+  footer {
+    border-top: 3px double var(--ink);
+    margin-top: 80px;
+    padding: 40px 48px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+  }
+
+  footer a { color: var(--accent); text-decoration: none; margin: 0 8px; }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .masthead { padding: 20px 24px 16px; }
+    .layout { grid-template-columns: 1fr; padding: 0 24px; gap: 0; }
+    .toc { display: none; }
+    .chair-block { grid-template-columns: 1fr; }
+    .chair-portrait { width: 100px; height: 130px; }
+    .icqsr-hero { padding: 28px 24px; }
+    .icqsr-title { font-size: 32px; }
+    .comp-row { grid-template-columns: 1fr; gap: 8px; }
+    h2 { font-size: 32px; }
+    main { padding: 32px 0 60px; }
+  }
+
+  /* ============ SPACING CONTROLS (이 두 숫자만 바꾸면 됨) ============ */
+  :root {
+    --section-gap: 100px;    /* (default 80px) */
+    --subsection-gap: 44px;  /* (default 32px) */
+  }
+  main section { margin-bottom: var(--section-gap); }
+  main section h3 { margin-top: var(--subsection-gap); }
+
+  /* ============ PLACEHOLDER / TBD NOTES (skeleton stage only) ============ */
+  .tbd-note {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--tbd-ink);
+    background: rgba(244, 211, 94, 0.25);
+    border: 1px dashed var(--tbd-ink);
+    padding: 6px 10px;
+    border-radius: 2px;
+  }
+  p.tbd-note { display: block; }
+</style>
+</head>
+<body>
+
+<!-- ============ MASTHEAD ============ -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span>INFORMS · Quality, Statistics &amp; Reliability</span>
+    <span>2026 Fall Edition · INFORMS Annual Meeting Special</span>
+  </div>
+  <h1>QSR News</h1>
+  <div class="masthead-bottom">
+    <div class="masthead-tag">A dispatch from the QSR Section &mdash; centered on the <strong>2026 INFORMS Annual Meeting, San Francisco</strong></div>
+  </div>
+</header>
+
+<!-- ============ SEARCH ============ -->
+<div class="search-zone">
+  <div class="search-wrap">
+    <span class="search-label">⌕ Search the issue</span>
+    <input type="text" id="searchInput" placeholder="Try &lsquo;Award&rsquo;, &lsquo;deadline&rsquo;, &lsquo;keynote&rsquo;…">
+    <span class="search-stats" id="searchStats"></span>
+  </div>
+</div>
+
+<div class="layout">
+
+  <!-- ============ TOC ============ -->
+  <aside class="toc">
+    <div class="toc-heading">In this issue</div>
+    <ol>
+      <li><a href="#chair">Chair&rsquo;s Message</a></li>
+      <li><a href="#business-meeting">QSR Business Meeting</a></li>
+      <li><a href="#annual-meeting">Annual Meeting Preview</a></li>
+      <li><a href="#competitions">Competitions &amp; Awards</a></li>
+      <li><a href="#community-choice">Community Choice Sessions</a></li>
+      <li><a href="#icqsr-summary">ICQSR 2026 Summary</a></li>
+      <li><a href="#subcommittees">QSR Subcommittees</a></li>
+      <li><a href="#other-activities">Other QSR Activities</a></li>
+      <li><a href="#calls">Calls for Papers</a></li>
+      <li><a href="#members-update">Members Update</a></li>
+      <li><a href="#advisory-appreciation">Advisory Board Appreciation</a></li>
+      <li><a href="#officers">Executive Officers</a></li>
+      <li><a href="#advisory-board">QSR Advisory Board</a></li>
+      <li><a href="#acknowledgements">Acknowledgements</a></li>
+      <li><a href="#connect">Stay Connected</a></li>
+    </ol>
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <main>
+
+    <!-- ============ §01 CHAIR ============ -->
+    <section id="chair">
+      <div class="section-num">§ 01 &mdash; Letter</div>
+      <h2>From the <em>Chair</em></h2>
+
+      <div class="chair-block">
+        <div class="chair-portrait">
+          <img src="https://webapp4.asu.edu/photo-ws/directory_photo/hyan46?size=medium&amp;break=1778562535&amp;blankImage2=1" alt="Hao Yan" onerror="this.style.display='none'">
+        </div>
+        <div>
+          <p class="lede">[Message from the Chair &mdash; pending]</p>
+        </div>
+      </div>
+
+      <p class="tbd-note">Requested from Dr. Hao Yan (haoyan@asu.edu) &middot; target: collect late Sep&ndash;early Oct, publish mid-Oct.</p>
+
+      <div class="signature">Hao Yan</div>
+      <div class="signature-title">INFORMS QSR Section Chair &middot; Associate Professor, School of Computing and Augmented Intelligence, Arizona State University</div>
+    </section>
+
+    <!-- ============ §02 BUSINESS MEETING ============ -->
+    <section id="business-meeting">
+      <div class="section-num">§ 02 &mdash; Save the Date</div>
+      <h2>INFORMS 2026 QSR <em>Business Meeting</em></h2>
+
+      <p class="lede">[Business meeting date, time, and location &mdash; pending]</p>
+
+      <p class="tbd-note">Expected as a townhall/session during the Annual Meeting, likely on the Monday of the conference week &mdash; not yet listed on the INFORMS schedule. Contact: TBD.</p>
+    </section>
+
+    <!-- ============ §03 ANNUAL MEETING PREVIEW ============ -->
+    <section id="annual-meeting">
+      <div class="section-num">§ 03 &mdash; Save the Date</div>
+      <h2>INFORMS Annual Meeting <em>2026 Preview</em></h2>
+
+      <p class="lede">QSR returns to the INFORMS Annual Meeting this fall in San Francisco.</p>
+
+      <div class="icqsr-meta" style="background: var(--paper-warm); border: 1px solid var(--ink); padding: 24px; margin-bottom: 28px;">
+        <div class="icqsr-meta-item" style="color: var(--accent);">
+          Dates
+          <div class="icqsr-meta-value" style="color: var(--ink); font-style: italic;">November 1&ndash;4, 2026</div>
+        </div>
+        <div class="icqsr-meta-item" style="color: var(--accent);">
+          Location
+          <div class="icqsr-meta-value" style="color: var(--ink); font-style: italic;">San Francisco, CA</div>
+        </div>
+        <div class="icqsr-meta-item" style="color: var(--accent);">
+          Venue
+          <div class="icqsr-meta-value" style="color: var(--ink); font-style: italic;">Moscone Center</div>
+        </div>
+      </div>
+
+      <h3>Basic conference information</h3>
+      <p class="tbd-note">[Session count, cluster overview, number of invited/joint sessions &mdash; pending]</p>
+
+      <h3>QSR Student Introduction &amp; Interaction</h3>
+      <p>[Session description, date/time/room &mdash; pending]</p>
+
+      <div class="keynote-grid">
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo"></div>
+          <div>
+            <div class="keynote-mini-name">Dr. Guanzhou Wei</div>
+            <div class="keynote-mini-aff">Iowa State University<br>gwei@iastate.edu</div>
+          </div>
+        </div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo"></div>
+          <div>
+            <div class="keynote-mini-name">Dr. Congfang Huang</div>
+            <div class="keynote-mini-aff">Purdue University<br>huan2305@purdue.edu</div>
+          </div>
+        </div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo"></div>
+          <div>
+            <div class="keynote-mini-name">Dr. Alan R. V&aacute;zquez</div>
+            <div class="keynote-mini-aff">Tecnol&oacute;gico de Monterrey<br>alanrvazquez@tec.mx</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ §04 COMPETITIONS ============ -->
+    <section id="competitions">
+      <div class="section-num">§ 04 &mdash; Competitions &amp; Awards</div>
+      <h2>INFORMS 2026 <em>Competitions</em></h2>
+
+      <p class="lede">As in previous years, the QSR Section organizes a full slate of competitions and awards at the Annual Meeting.</p>
+
+      <div class="comp-row">
+        <div class="comp-label">Best Paper</div>
+        <div>
+          <div class="comp-name">QSR Best Paper Competition <span class="tbd-note">(formerly QSR Best Refereed Paper Competition)</span></div>
+          <div class="comp-desc">Chairs: Yinan Wang (wangy88@rpi.edu), Xiaochen Xian (xxian@gatech.edu), Shancong Mou (mou00006@umn.edu). [Details, deadline &mdash; pending]</div>
+        </div>
+        <div class="deadline-badge soon">TBD</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">Student Paper</div>
+        <div>
+          <div class="comp-name">QSR Best Student Paper Competition</div>
+          <div class="comp-desc">Chairs: Bo Shen (bo.shen@njit.edu), Cesar Ruiz Torres (caruiz@ou.edu), Jianxin Xie (hcf7fd@virginia.edu). [Details, deadline &mdash; pending]</div>
+        </div>
+        <div class="deadline-badge soon">TBD</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">Student Poster</div>
+        <div>
+          <div class="comp-name">QSR Best Student Poster Competition</div>
+          <div class="comp-desc">Chairs: Mahathir Bappy (mmbappy@lsu.edu), Syed Hasib Akhter Faruqui (shf006@shsu.edu). [Details, deadline &mdash; pending]</div>
+        </div>
+        <div class="deadline-badge soon">TBD</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">Industry Award</div>
+        <div>
+          <div class="comp-name">QSR Industry Service Award</div>
+          <div class="comp-desc">Committee: Alan R. V&aacute;zquez Alcocer (alanrvazquez@tec.mx), Heeyoung Kim (heeyoungkim@kaist.ac.kr), Mohammad Najjartabar Bisheh (mbisheh3@gatech.edu), Shashank Galla (shashankgalla@tamu.edu). [Details, deadline &mdash; pending]</div>
+        </div>
+        <div class="deadline-badge soon">TBD</div>
+      </div>
+
+      <div class="comp-row">
+        <div class="comp-label">Teaching</div>
+        <div>
+          <div class="comp-name">QSR Teaching Award</div>
+          <div class="comp-desc">Committee: Bo Shen (bo.shen@njit.edu), Dan Li (dli27@uw.edu), Sahand Hajifar (Sahand.Hajifar@park.edu). [Details, deadline &mdash; pending]</div>
+        </div>
+        <div class="deadline-badge soon">TBD</div>
+      </div>
+    </section>
+
+    <!-- ============ §05 COMMUNITY CHOICE SESSIONS ============ -->
+    <section id="community-choice">
+      <div class="section-num">§ 05 &mdash; Cross-society sessions</div>
+      <h2>QSR-led <em>Community Choice Sessions</em></h2>
+
+      <p class="lede">Panels organized by QSR in collaboration with other societies and journals.</p>
+
+      <h3>INFORMS Journal on Data Science (IJDS) Featured Session</h3>
+      <p>Moderator: Jia Liu (University of Florida). Panelists: Yu Ding (Georgia Institute of Technology); Gonen Singer and David Levin (Bar-Ilan University); Can Li (Purdue University). [Session title, date/time/room &mdash; pending]</p>
+
+      <h3>Navigating Federal Funding</h3>
+      <p>Moderators: Mohammad Bisheh (Georgia Institute of Technology), Imtiaz Ahmed (West Virginia University). Panelist: Nathaniel Bastian <span class="tbd-note">(not yet registered)</span>. [Session details &mdash; pending]</p>
+
+      <h3>IISE Transactions: Editorial Perspectives and Open Discussion</h3>
+      <p>Moderator: Judy Jin (University of Michigan). Panelists: Kaibo Liu (UW&ndash;Madison), Zhenyu Kong (Virginia Tech), Siqian Shen (University of Michigan), Jennifer Ryan (Lehigh University). [Session details &mdash; pending]</p>
+    </section>
+
+    <!-- ============ §06 ICQSR 2026 SUMMARY ============ -->
+    <section id="icqsr-summary">
+      <div class="section-num">§ 06 &mdash; Recap</div>
+      <h2>ICQSR 2026 <em>Summary</em></h2>
+
+      <p class="lede">[Conference recap &mdash; pending. Group photo shared by Dr. Yan.]</p>
+    </section>
+
+    <!-- ============ §07 SUBCOMMITTEES ============ -->
+    <section id="subcommittees">
+      <div class="section-num">§ 07 &mdash; Section governance</div>
+      <h2>QSR Subcommittee <em>for 2026</em></h2>
+
+      <p class="lede">[Subcommittee chairs and year-end summaries &mdash; pending]</p>
+
+      <h3>Conference Subcommittee</h3>
+      <p class="tbd-note">[Chair, members, outcomes &mdash; pending. Note: QSR website officer listing currently out of date following an INFORMS platform update.]</p>
+
+      <h3>Fundraising Subcommittee</h3>
+      <p class="tbd-note">[Chair, members, outcomes &mdash; pending]</p>
+
+      <h3>Membership Growth Subcommittee</h3>
+      <p class="tbd-note">[Chair, members, outcomes &mdash; pending]</p>
+
+      <h3>Academic Subcommittee</h3>
+      <p class="tbd-note">[Chair, members, outcomes &mdash; pending]</p>
+
+      <h3>Outreach Subcommittee</h3>
+      <p class="tbd-note">[Chair, members, outcomes &mdash; pending]</p>
+
+      <h3>Public Communication Subcommittee</h3>
+      <p class="tbd-note">[Chair, members, outcomes &mdash; pending]</p>
+    </section>
+
+    <!-- ============ §08 OTHER QSR ACTIVITIES ============ -->
+    <section id="other-activities">
+      <div class="section-num">§ 08 &mdash; Community</div>
+      <h2>Other QSR <em>Activities</em></h2>
+
+      <h3>QSR Webinars</h3>
+      <p>Organized by Dr. Chiwoo Park and Dr. Jaesung Lee. [Speaker list, titles, recording links &mdash; pending]</p>
+
+      <h3>INFORMS Student Chapter Funding</h3>
+      <p>Contact: Dr. Minhee Kim (mkim@ise.ufl.edu). [Recipients, amounts, outcomes &mdash; pending]</p>
+
+      <h3>Interview with Professor</h3>
+      <p class="tbd-note">Tentative &mdash; guest and topic to be confirmed.</p>
+    </section>
+
+    <!-- ============ §09 CFP ============ -->
+    <section id="calls">
+      <div class="section-num">§ 09 &mdash; Open calls</div>
+      <h2>Calls for <em>Papers &amp; Events</em></h2>
+
+      <p class="lede">Open special issues and events relevant to the QSR community.</p>
+
+      <h3>INFORMS Journal on Data Science (IJDS)</h3>
+      <div class="cfp-card">
+        <div class="cfp-journal">Call for Papers</div>
+        <div class="cfp-title">[Issue title &mdash; pending]</div>
+        <div style="font-size: 13px; color: var(--ink-soft);">[Guest editors &mdash; pending]</div>
+        <div class="cfp-meta">
+          <span class="cfp-deadline">↓ TBD</span>
+          <span class="inline-link" style="font-style: italic;">View call → [link pending]</span>
+        </div>
+      </div>
+
+      <h3>IISE Transactions</h3>
+      <div class="cfp-card">
+        <div class="cfp-journal">Call for Papers</div>
+        <div class="cfp-title">[Issue title &mdash; pending]</div>
+        <div style="font-size: 13px; color: var(--ink-soft);">[Issue editors &mdash; pending]</div>
+        <div class="cfp-meta">
+          <span class="cfp-deadline">↓ TBD</span>
+          <span class="inline-link" style="font-style: italic;">View call → [link pending]</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ §10 MEMBERS UPDATE ============ -->
+    <section id="members-update">
+      <div class="section-num">§ 10 &mdash; Community</div>
+      <h2>Members <em>Update</em></h2>
+
+      <p class="lede">Submitted via the QSR Member Update Google Form.</p>
+
+      <h3>Honors and Awards Received</h3>
+      <p class="tbd-note">[Responses pending &mdash; Google Form circulated]</p>
+
+      <h3>Ph.D. Degrees Earned and Promotions</h3>
+      <p class="tbd-note">[Responses pending &mdash; Google Form circulated]</p>
+
+      <h3>Grants Received</h3>
+      <p class="tbd-note">[Responses pending &mdash; Google Form circulated]</p>
+
+      <h3>Job Openings</h3>
+      <p class="tbd-note">[Direct links to be collected per school; outreach via department mailing lists]</p>
+    </section>
+
+    <!-- ============ §11 ADVISORY BOARD APPRECIATION ============ -->
+    <section id="advisory-appreciation">
+      <div class="section-num">§ 11 &mdash; Thanks</div>
+      <h2>Appreciation of the <em>QSR Advisory Board</em></h2>
+
+      <p class="tbd-note">[Content pending &mdash; source to be confirmed with QSR leadership]</p>
+    </section>
+
+    <!-- ============ §12 EXECUTIVE OFFICERS ============ -->
+    <section id="officers">
+      <div class="section-num">§ 12 &mdash; Section governance</div>
+      <h2>QSR Executive Officers <em>(2025&ndash;2026)</em></h2>
+
+      <p class="lede">A snapshot of the people steering the QSR Section.</p>
+
+      <div class="board-group-label">Executive Officers</div>
+      <div class="keynote-grid board-grid">
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="https://webapp4.asu.edu/photo-ws/directory_photo/hyan46?size=medium&amp;break=1778562535&amp;blankImage2=1" alt="Hao Yan" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Hao Yan</div>
+            <div class="keynote-mini-aff">Chair<br>Arizona State University</div>
+          </div>
+        </div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="https://higherlogicdownload.s3.amazonaws.com/INFORMS/d8a522c3-7c03-4dc4-a949-0dbefe85199a/UploadedImages/2023/liu-peter.jpg" alt="Jia (Peter) Liu" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Jia (Peter) Liu</div>
+            <div class="keynote-mini-aff">Chair-Elect<br>University of Florida</div>
+          </div>
+        </div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="https://www.acsu.buffalo.edu/~xchen325/images/xiaoyu.jpeg" alt="Xiaoyu Chen" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Xiaoyu Chen</div>
+            <div class="keynote-mini-aff">Secretary / Treasurer<br>University at Buffalo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-group-label">Council Members</div>
+      <div class="keynote-grid board-grid">
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="https://ise.rutgers.edu/sites/default/files/styles/3x4_one_third_full_default_1x/public/2023-07/Ahmed-Aziz-Ezzat.jpg?h=a7ffc51c&amp;itok=80-dMXXf" alt="Ahmed Aziz Ezzat" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Ahmed Aziz Ezzat</div>
+            <div class="keynote-mini-aff">Council &middot; 2024&ndash;2026<br>Rutgers University</div>
+          </div>
+        </div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="https://alanrvazquez.netlify.app/authors/admin/avatar_hu89497b1f03fdcf0cc00e0b7d0e3cd7a8_94636_250x250_fill_q90_lanczos_center.jpg" alt="Alan R. Vazquez" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Alan R. Vazquez</div>
+            <div class="keynote-mini-aff">Council &middot; 2024&ndash;2026<br>Tecnol&oacute;gico de Monterrey</div>
+          </div>
+        </div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="https://uws.njit.edu/ldapimage.php?format=full&amp;uid=bs644" alt="Bo Shen" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Bo Shen</div>
+            <div class="keynote-mini-aff">Council &middot; 2024&ndash;2026<br>New Jersey Institute of Technology</div>
+          </div>
+        </div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="https://www.dan-li-ie.com/images/avatar-3.jpg" alt="Dan Li" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Dan Li</div>
+            <div class="keynote-mini-aff">Council &middot; 2025&ndash;2027<br>University of Washington</div>
+          </div>
+        </div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="https://pure.kaist.ac.kr/files-asset/13609382/1935.jpg?w=400&amp;f=jpg" alt="Heeyoung Kim" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Heeyoung Kim</div>
+            <div class="keynote-mini-aff">Council &middot; 2025&ndash;2027<br>KAIST</div>
+          </div>
+        </div>
+        <div class="keynote-mini">
+          <div class="keynote-mini-photo">
+            <img src="https://faculty.eng.ufl.edu/minhee-kim/wp-content/uploads/sites/587/2026/04/Kim-Minhee-2026_3-1-267x300.webp" alt="Minhee Kim" onerror="this.style.display='none'">
+          </div>
+          <div>
+            <div class="keynote-mini-name">Minhee Kim</div>
+            <div class="keynote-mini-aff">Council &middot; 2025&ndash;2027<br>University of Florida</div>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 13px; font-style: italic; color: var(--ink-soft); margin-top: 20px;">Roster carried forward from the QSR Officers &amp; Leadership page (<a class="inline-link" href="https://connect.informs.org/qsr/officers">connect.informs.org/qsr/officers</a>) &mdash; to be re-confirmed for Fall 2026, as this page appears not to reflect recent INFORMS platform updates.</p>
+    </section>
+
+    <!-- ============ §13 ADVISORY BOARD ============ -->
+    <section id="advisory-board">
+      <div class="section-num">§ 13 &mdash; Section governance</div>
+      <h2>QSR <em>Advisory Board</em></h2>
+
+      <p class="tbd-note">[Content pending &mdash; source to be confirmed with QSR leadership]</p>
+    </section>
+
+    <!-- ============ §14 ACKNOWLEDGEMENTS ============ -->
+    <section id="acknowledgements">
+      <div class="section-num">§ 14 &mdash; Thanks</div>
+      <h2><em>Acknowledgements</em></h2>
+
+      <p class="lede">We would like to thank all our sponsors for their generous support of QSR events.</p>
+
+      <h3>Department Sponsors</h3>
+      <p class="tbd-note">[List pending &mdash; confirm whether unchanged from QSR website sponsors page, which appears outdated (last updated 2023)]</p>
+
+      <h3>Individual Sponsors</h3>
+      <p class="tbd-note">[List pending &mdash; confirm whether unchanged from QSR website sponsors page]</p>
+    </section>
+
+    <!-- ============ §15 STAY CONNECTED ============ -->
+    <section id="connect">
+      <style>
+        .connect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 24px; }
+        @media (max-width: 600px) { .connect-grid { grid-template-columns: 1fr; } }
+        .connect-card { border: 1px solid var(--ink); background: var(--paper-warm); padding: 18px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .connect-qr { width: 132px; height: 132px; background: #f5f1ea; padding: 7px; border: 1px solid var(--rule); }
+        .connect-qr-svg { width: 100%; height: 100%; display: block; }
+        .connect-card-name { font-family: 'Fraunces', serif; font-weight: 600; font-size: 16px; }
+        .connect-card-sub { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin-top: -6px; }
+        .connect-card-link { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.03em; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); word-break: break-all; }
+        .connect-card-link:hover { background: var(--accent-soft); }
+      </style>
+
+      <div class="section-num">§ 15 &mdash; Stay in touch</div>
+      <h2>Stay <em>connected</em></h2>
+
+      <p>The QSR Section maintains active channels for member engagement, member spotlights, webinar announcements, and community news. Scan a code or follow a link to join in. <span class="tbd-note">(Same QR codes as the Summer newsletter.)</span></p>
+
+      <div class="connect-grid">
+
+        <div class="connect-card">
+          <div class="connect-qr"></div>
+          <div>
+            <div class="connect-card-name">LinkedIn</div>
+            <div class="connect-card-sub">Member highlights</div>
+          </div>
+          <a class="connect-card-link" href="https://www.linkedin.com/company/informs-quality-statistics-and-reliability-qsr/" target="_blank" rel="noopener">linkedin.com/company/&#8203;informs-qsr</a>
+        </div>
+
+        <div class="connect-card">
+          <div class="connect-qr"></div>
+          <div>
+            <div class="connect-card-name">YouTube</div>
+            <div class="connect-card-sub">Webinar recordings</div>
+          </div>
+          <a class="connect-card-link" href="https://www.youtube.com/@qsrinforms3661" target="_blank" rel="noopener">youtube.com/&#8203;@qsrinforms3661</a>
+        </div>
+
+        <div class="connect-card">
+          <div class="connect-qr"></div>
+          <div>
+            <div class="connect-card-name">Join QSR</div>
+            <div class="connect-card-sub">Become a member</div>
+          </div>
+          <a class="connect-card-link" href="https://connect.informs.org/qsr/join-qsr3" target="_blank" rel="noopener">connect.informs.org/&#8203;qsr</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  INFORMS Quality, Statistics &amp; Reliability &nbsp;·&nbsp; 2026 Fall Edition · INFORMS Annual Meeting Special<br>
+  <div class="footer-credit">Designed &amp; developed by Jungmin Kim, PhD student, Rutgers University</div>
+</footer>
+<script>
+  // ============ SEARCH ============
+  const searchInput = document.getElementById('searchInput');
+  const searchStats = document.getElementById('searchStats');
+  const sections = document.querySelectorAll('main section');
+
+  function clearHighlights() {
+    document.querySelectorAll('.hl-mark').forEach(el => {
+      const parent = el.parentNode;
+      parent.replaceChild(document.createTextNode(el.textContent), el);
+      parent.normalize();
+    });
+  }
+
+  function highlightInNode(node, regex) {
+    if (node.nodeType === 3) {
+      const matches = node.textContent.match(regex);
+      if (matches) {
+        const span = document.createElement('span');
+        span.innerHTML = node.textContent.replace(regex, '<span class="hl-mark">$1</span>');
+        node.parentNode.replaceChild(span, node);
+        return matches.length;
+      }
+      return 0;
+    } else if (node.nodeType === 1 && !['SCRIPT', 'STYLE', 'INPUT'].includes(node.tagName) && !node.classList.contains('hl-mark')) {
+      let count = 0;
+      Array.from(node.childNodes).forEach(child => count += highlightInNode(child, regex));
+      return count;
+    }
+    return 0;
+  }
+
+  searchInput.addEventListener('input', (e) => {
+    const q = e.target.value.trim();
+    clearHighlights();
+
+    if (!q) {
+      sections.forEach(s => s.classList.remove('dimmed'));
+      searchStats.textContent = '';
+      return;
+    }
+
+    const regex = new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    let totalMatches = 0;
+    let matchedSections = 0;
+
+    sections.forEach(section => {
+      const found = highlightInNode(section, regex);
+      if (found > 0) {
+        section.classList.remove('dimmed');
+        matchedSections++;
+        totalMatches += found;
+      } else {
+        section.classList.add('dimmed');
+      }
+    });
+
+    searchStats.textContent = totalMatches > 0
+      ? `${totalMatches} match${totalMatches > 1 ? 'es' : ''} · ${matchedSections} section${matchedSections > 1 ? 's' : ''}`
+      : 'No matches';
+  });
+
+  // ============ TOC ACTIVE STATE ============
+  const tocLinks = document.querySelectorAll('.toc a');
+
+  function updateActiveTOC() {
+    const line = window.innerHeight * 0.3;         
+    let activeId = sections[0].id;
+
+    const atBottom = window.innerHeight + window.scrollY
+                     >= document.documentElement.scrollHeight - 2;
+    if (atBottom) {
+      activeId = sections[sections.length - 1].id;
+    } else {
+      sections.forEach(sec => {
+        if (sec.getBoundingClientRect().top <= line) activeId = sec.id;
+      });
+    }
+
+    tocLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + activeId);
+    });
+  }
+
+  updateActiveTOC();
+  window.addEventListener('scroll', updateActiveTOC, { passive: true });
+  window.addEventListener('resize', updateActiveTOC);
+
+  // ============ AUTO DEADLINE STATUS (driven by system date) ============
+  // Single source of truth = the data-deadline="YYYY-MM-DD" attribute on each
+  // .deadline-badge, .timeline-item, and .cfp-deadline. Colors/strikethrough are
+  // computed from today's date, so nothing needs manual updating over time.
+  (function () {
+    const URGENT_DAYS = 21;   // <= this many days remaining → red "urgent"
+    const SOON_DAYS   = 60;   // <= this many days remaining → gold "soon"
+    const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    function parseDate(str) {
+      // Parse as local midnight to avoid UTC off-by-one
+      const [y, m, d] = str.split('-').map(Number);
+      return new Date(y, m - 1, d);
+    }
+    function daysUntil(str) {
+      return Math.round((parseDate(str) - today) / 86400000);
+    }
+    function relLabel(days) {
+      if (days < 0)  return Math.abs(days) + 'd ago';
+      if (days === 0) return 'today';
+      if (days === 1) return '1d left';
+      return days + 'd left';
+    }
+
+    // --- Deadline badges: auto text (short date) + auto color + relative caption ---
+    document.querySelectorAll('.deadline-badge[data-deadline]').forEach(function (el) {
+      const ds = el.getAttribute('data-deadline');
+      const days = daysUntil(ds);
+      const d = parseDate(ds);
+      const short = MONTHS[d.getMonth()] + ' ' + d.getDate();
+
+      el.classList.remove('urgent', 'soon', 'upcoming', 'passed');
+      let state;
+      if (days < 0)               state = 'passed';
+      else if (days <= URGENT_DAYS) state = 'urgent';
+      else if (days <= SOON_DAYS)   state = 'soon';
+      else                          state = 'upcoming';
+      el.classList.add(state);
+
+      // rebuild content: short date + small relative-time caption
+      el.innerHTML = short + '<span class="deadline-sub">' + relLabel(days) + '</span>';
+      el.setAttribute('title', short + ' — ' + relLabel(days));
+    });
+
+    // --- Timeline items: recolor dot + strike past events (keep .major styling) ---
+    document.querySelectorAll('.timeline-item[data-deadline]').forEach(function (el) {
+      const days = daysUntil(el.getAttribute('data-deadline'));
+      el.classList.remove('urgent', 'passed');
+      if (days < 0) {
+        el.classList.add('passed');
+      } else if (days <= URGENT_DAYS && !el.classList.contains('major')) {
+        el.classList.add('urgent');
+      }
+    });
+
+    // --- CFP deadlines: strike if passed, redden if closing soon, add relative note ---
+    document.querySelectorAll('.cfp-deadline[data-deadline]').forEach(function (el) {
+      const days = daysUntil(el.getAttribute('data-deadline'));
+      el.classList.remove('urgent', 'passed');
+      // strip any previously-added relative note before re-adding
+      const old = el.querySelector('.cfp-relative');
+      if (old) old.remove();
+
+      let note;
+      if (days < 0) { el.classList.add('passed'); note = '(closed)'; }
+      else if (days <= URGENT_DAYS) { el.classList.add('urgent'); note = '(' + relLabel(days) + ')'; }
+      else { note = '(' + relLabel(days) + ')'; }
+      el.insertAdjacentHTML('beforeend', '<span class="cfp-relative">' + note + '</span>');
+    });
+  })();
+
+</script>
+
+</body>
+</html>
