@@ -1271,131 +1271,95 @@
       </ul>
     </section>
 
-    <!-- ============ §06 ICQSR 2026 SUMMARY ============ -->
+        <!-- ============ §06 ICQSR 2026 SUMMARY ============ -->
     <section id="icqsr-summary">
       <style>
-        .finalist { border-left: 3px solid var(--accent); padding: 8px 0 8px 16px; margin: 14px 0; }
-        .finalist-title { font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; line-height: 1.35; }
-        .finalist-authors { font-size: 14px; margin-top: 4px; }
-        .finalist-aff { font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
-        .comp-chairs { font-size: 14px; color: var(--ink-soft); margin: 6px 0 14px; }
-        .icqsr-figure { margin: 0 0 28px; }
-        .icqsr-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--ink); }
-        .icqsr-figure figcaption { font-size: 13px; font-style: italic; color: var(--ink-soft); margin-top: 8px; }
+        .ic-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:12px; margin:1.2rem 0; }
+        .ic-stat { border:1px solid var(--ink); background:var(--paper-warm); padding:16px 12px 12px; text-align:center; }
+        .ic-num { font-family:'Fraunces',Georgia,serif; font-size:38px; line-height:1; color:var(--accent); font-weight:600; }
+        .ic-lab { margin-top:8px; font-size:11.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); line-height:1.35; }
+        .ic-fig { margin:0 0 20px; }
+        .ic-fig img { width:100%; height:auto; display:block; border:1px solid var(--ink); }
+        .ic-fig figcaption { font-size:12.5px; color:var(--ink-soft); margin-top:6px; }
+        .ic-list { list-style:none; padding:0; margin:0 0 1.2rem; }
+        .ic-list li { padding:.55rem 0; border-bottom:1px solid rgba(0,0,0,.08); line-height:1.5; }
+        .ic-sub { color:var(--ink-soft); font-size:.92em; }
+        .ic-win { display:inline-block; background:var(--accent); color:#fff; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; padding:2px 7px; margin-left:8px; vertical-align:middle; }
+        .ic-table { width:100%; border-collapse:collapse; margin:0 0 1.2rem; font-size:.95em; }
+        .ic-table th, .ic-table td { text-align:left; padding:.55rem .6rem; border-bottom:1px solid rgba(0,0,0,.08); vertical-align:top; }
+        .ic-table th { color:var(--accent); font-weight:600; font-size:.85em; text-transform:uppercase; letter-spacing:.04em; }
+        .ic-table td:first-child { color:var(--accent); font-weight:600; white-space:nowrap; }
+        .ic-table tr.win td { background:var(--paper-warm); }
       </style>
 
       <div class="section-num">§ 06 &mdash; Recap</div>
       <h2>ICQSR 2026 <em>Summary</em></h2>
 
-      <p class="lede">This year, the QSR Section organized the 4th INFORMS Conference on Quality, Statistics, and Reliability (ICQSR), hosted by City University of Hong Kong, July 5&ndash;9, 2026. The conference theme was <em>AI for Quality &amp; Reliability</em>.</p>
+      <p class="lede">This year, the QSR Section organized the 4th INFORMS Conference on Quality, Statistics, and Reliability (ICQSR), hosted by City University of Hong Kong from July 5 to 9, 2026.</p>
 
-      <div class="icqsr-meta" style="background: var(--paper-warm); border: 1px solid var(--ink); padding: 24px; margin-bottom: 28px;">
-        <div class="icqsr-meta-item" style="color: var(--accent);">
-          Dates
-          <div class="icqsr-meta-value" style="color: var(--ink); font-style: italic;">July 5&ndash;9, 2026</div>
-        </div>
-        <div class="icqsr-meta-item" style="color: var(--accent);">
-          Location
-          <div class="icqsr-meta-value" style="color: var(--ink); font-style: italic;">Hong Kong SAR, China</div>
-        </div>
-        <div class="icqsr-meta-item" style="color: var(--accent);">
-          Host
-          <div class="icqsr-meta-value" style="color: var(--ink); font-style: italic;">City University of Hong Kong</div>
-        </div>
-      </div>
-
-      <figure class="icqsr-figure">
-        <img src="2026%20icqsr.jpg" alt="ICQSR 2026 group photo">
-        <figcaption>Fig. 1 &mdash; ICQSR 2026 group photo</figcaption>
+      <figure class="ic-fig">
+        <img src="2026%20icqsr.jpg" alt="ICQSR 2026 group photo" onerror="this.parentElement.style.display='none'">
+        <figcaption>Fig. 1 &mdash; ICQSR 2026</figcaption>
       </figure>
 
-      <p>The program opened on Sunday, July 5 with a Data Challenge workshop and lab tours, followed by four days of plenary talks, a distinguished lecture, a Leaders Forum, the Best Paper Competition, the Future Faculty Colloquium, and parallel technical sessions. Journal-featured sessions included the <em>INFORMS Journal on Data Science</em>, ENBIS, <em>Technometrics</em>, and <em>IISE Transactions</em>. Participants also joined a banquet aboard the Harbour Cruise <em>Bauhinia</em>, a networking reception on campus, and tours of CityU&rsquo;s College of Computing and Embodied AI labs.</p>
-
-
-      <h3>Plenary talks and distinguished lecture</h3>
-      <div class="keynote-grid">
-        <div class="keynote-mini">
-          <div class="keynote-mini-photo">
-            <img src="https://www.ds.cityu.edu.hk/icqsr2026/images/JianjunSHI.jpg" alt="Jianjun Shi" onerror="this.style.display='none'">
-          </div>
-          <div>
-            <div class="keynote-mini-name">Prof. Jianjun Shi</div>
-            <div class="keynote-mini-aff">Georgia Institute of Technology<br><em>AI Enabled Quality Improvement in Smart Manufacturing</em></div>
-          </div>
-        </div>
-        <div class="keynote-mini">
-          <div class="keynote-mini-photo">
-            <img src="https://www.ds.cityu.edu.hk/icqsr2026/images/KwangjaeKIM.jpg" alt="Kwang-Jae Kim" onerror="this.style.display='none'">
-          </div>
-          <div>
-            <div class="keynote-mini-name">Prof. Kwang-Jae Kim</div>
-            <div class="keynote-mini-aff">POSTECH<br><em>From Manufacturing to Valufacturing: Implications for QSR</em></div>
-          </div>
-        </div>
-        <div class="keynote-mini">
-          <div class="keynote-mini-photo">
-            <img src="https://www.ds.cityu.edu.hk/icqsr2026/images/ZhaoyangDONG.jpg" alt="Zhaoyang Dong" onerror="this.style.display='none'">
-          </div>
-          <div>
-            <div class="keynote-mini-name">Prof. Zhaoyang Dong</div>
-            <div class="keynote-mini-aff">City University of Hong Kong<br><em>AI and Data Driven Smart Energy Systems &ndash; Management, Challenges and Opportunities</em></div>
-          </div>
-        </div>
-        <div class="keynote-mini">
-          <div class="keynote-mini-photo">
-            <img src="https://www.ds.cityu.edu.hk/icqsr2026/images/LawrenceCHEUNG.jpg" alt="Lawrence Cheung" onerror="this.style.display='none'">
-          </div>
-          <div>
-            <div class="keynote-mini-name">Dr. Lawrence Cheung</div>
-            <div class="keynote-mini-aff">Hong Kong Productivity Council<br><em>AI with HKPC, You can</em></div>
-          </div>
-        </div>
+      <div class="ic-stats">
+        <div class="ic-stat"><div class="ic-num">180+</div><div class="ic-lab">Attendees</div></div>
+        <div class="ic-stat"><div class="ic-num">10</div><div class="ic-lab">Countries &amp; regions</div></div>
+        <div class="ic-stat"><div class="ic-num">142</div><div class="ic-lab">Technical presentations</div></div>
+        <div class="ic-stat"><div class="ic-num">30</div><div class="ic-lab">Sessions</div></div>
+        <div class="ic-stat"><div class="ic-num">5</div><div class="ic-lab">Days</div></div>
       </div>
 
-      <h3>Best Paper Award Finalists</h3>
-      <p class="mu-text" style="margin-bottom:.6rem;">Four finalists presented in the Best Paper Session (July 6&ndash;9). Competition committee: Heeyoung Kim (Chair, KAIST), Hui Wang (FAMU&ndash;FSU), Xiao Liu (Georgia Tech), Zhisheng Ye (NUS).</p>
-      
-      <style>
-        .ic-list { list-style:none; padding:0; margin:0 0 1.4rem; counter-reset:icn; }
-        .ic-list li { padding:.7rem 0; border-bottom:1px solid rgba(0,0,0,.08); line-height:1.55; }
-        .ic-title { font-weight:600; color:var(--ink); }
-        .ic-sub { color:var(--ink-soft); font-size:.92em; }
-        .ic-rank { display:inline-block; min-width:2.4rem; color:var(--accent); font-weight:600; }
-        .ic-table { width:100%; border-collapse:collapse; margin:0 0 1.2rem; font-size:.95em; }
-        .ic-table th, .ic-table td { text-align:left; padding:.55rem .6rem; border-bottom:1px solid rgba(0,0,0,.08); vertical-align:top; }
-        .ic-table th { color:var(--accent); font-weight:600; font-size:.85em; text-transform:uppercase; letter-spacing:.04em; }
-        .ic-table td:first-child { color:var(--accent); font-weight:600; white-space:nowrap; }
-      </style>
-      
+      <p>ICQSR 2026 was made possible by the conference chairs, Jianjun Shi (Georgia Institute of Technology) and Jianping Wang (City University of Hong Kong); the organizing committee, including Ershun Pan (Shanghai Jiao Tong University), Jian Liu (University of Arizona), and Zijun Zhang (City University of Hong Kong); the program committee, including Sukjoo Bae (Hanyang University) and Xi Zhang (Peking University); and many volunteers.</p>
+
+      <!-- ===== Plenaries ===== -->
+      <h3>Plenary talks</h3>
       <ul class="ic-list">
-        <li><span class="ic-title">ShapeFlow: Stochastic Neural Dynamics for Multi-Future 3D Prediction</span><br>
-          <span class="ic-sub">Nick Nachtmann, Michael Biehler &middot; University of Wisconsin&ndash;Madison</span></li>
-        <li><span class="ic-title">Sparse Bandit for Quickest Change Detection in Partially Observed Functional Data</span><br>
-          <span class="ic-sub">Peiyao Liu, Nan Chen &middot; National University of Singapore</span></li>
-        <li><span class="ic-title">Feature-Space-Regularized Personalized Federated Learning via Prototypical Distribution</span><br>
-          <span class="ic-sub">Rui Zhou, Yanting Li, Fugee Tsung, Zhijun Wang &middot; Shanghai Jiao Tong University; HKUST / HKUST (Guangzhou)</span></li>
-        <li><span class="ic-title">ResCloud: Reference-based Modeling and Predictive Reconstruction of Temporal 3D Point Cloud Profiles</span><br>
-          <span class="ic-sub">Yichen Ma, Michael Biehler, Chiehyeon Lim, Jianjun Shi &middot; Georgia Tech; University of Wisconsin&ndash;Madison; UNIST</span></li>
+        <li><strong>Jianjun Shi</strong> <span class="ic-sub">(Georgia Institute of Technology)</span><br>AI Enabled Quality Improvement in Smart Manufacturing</li>
+        <li><strong>Kwang-Jae Kim</strong> <span class="ic-sub">(Pohang University of Science and Technology)</span><br>From Manufacturing to Valufacturing: Implications for QSR</li>
+        <li><strong>Lixin Tang</strong> <span class="ic-sub">(Northeastern University)</span><br>Data Analytics and Optimization for Manufacture-Circulation Industrial System</li>
+        <li><strong>Zhaoyang Dong</strong> <span class="ic-sub">(City University of Hong Kong)</span><br>AI and Data Driven Smart Energy Systems &ndash; Management, Challenges and Opportunities</li>
+        <li><strong>Lawrence Cheung</strong> <span class="ic-sub">(Hong Kong Productivity Council)</span><br>AI with HKPC, You can</li>
       </ul>
-      
-      <h3>Data Challenge Results</h3>
-      <p class="mu-text" style="margin-bottom:.6rem;">Finalist teams ranked by precision.
-        <a class="inline-link" href="https://www.ds.cityu.edu.hk/icqsr2026/data-challenge-finalist.html" target="_blank" rel="noopener">Full results &rarr;</a></p>
-      
+
+      <!-- ===== Colloquium ===== -->
+      <h3>Inaugural Future Faculty Colloquium</h3>
+      <p>ICQSR 2026 featured the inaugural Future Faculty Colloquium, organized by Yong Chen (University of Iowa) and Jiaman Wu (City University of Hong Kong). It connected postdoctoral fellows and Ph.D. candidates with leaders in the field to explore the opportunities and challenges of academia.</p>
+      <figure class="ic-fig">
+        <img src="icqsr_colloquium.jpg" alt="ICQSR 2026 inaugural Future Faculty Colloquium" onerror="this.parentElement.style.display='none'">
+        <figcaption>Fig. 2 &mdash; ICQSR 2026 Inaugural Future Faculty Colloquium</figcaption>
+      </figure>
+
+      <!-- ===== Panel ===== -->
+      <h3>Leaders Forum</h3>
+      <p><strong>Navigating the AI Frontier in Research and Education.</strong> A panel session stimulating discussion on current and relevant QSR topics, with Zhen He (Tianjin University), Kwang-Jae Kim (POSTECH), Lixin Tang (Northeastern University), Fugee Tsung (HKUST), Jianjun Shi (Georgia Institute of Technology), and Jianping Wang (City University of Hong Kong).</p>
+
+      <!-- ===== Best Paper ===== -->
+      <h3>Best Paper Award</h3>
+      <p>The competition was organized by Heeyoung Kim (KAIST), Xiao Liu (Georgia Institute of Technology), Hui Wang (Florida A&amp;M University&ndash;Florida State University), and Zhisheng Ye (National University of Singapore), and received 33 submissions.</p>
+      <ul class="ic-list">
+        <li><strong>Sparse Bandit for Quickest Change Detection in Partially Observed Functional Data</strong> <span class="ic-win">Winner</span><br><span class="ic-sub">Peiyao Liu, Nan Chen &middot; National University of Singapore</span></li>
+        <li>ShapeFlow: Stochastic Neural Dynamics for Multi-Future 3D Prediction<br><span class="ic-sub">Nick Nachtmann, Michael Biehler &middot; University of Wisconsin&ndash;Madison</span></li>
+        <li>Feature-Space-Regularized Personalized Federated Learning via Prototypical Distribution<br><span class="ic-sub">Rui Zhou, Yanting Li, Fugee Tsung, Zhijun Wang &middot; Shanghai Jiao Tong University; HKUST / HKUST (Guangzhou)</span></li>
+        <li>ResCloud: Reference-based Modeling and Predictive Reconstruction of Temporal 3D Point Cloud Profiles<br><span class="ic-sub">Yichen Ma, Michael Biehler, Chiehyeon Lim, Jianjun Shi &middot; Georgia Tech; University of Wisconsin&ndash;Madison; UNIST</span></li>
+      </ul>
+
+      <!-- ===== Data Challenge ===== -->
+      <h3>Data Challenge</h3>
+      <p>The competition was organized by Yanting Li (Shanghai Jiao Tong University), Sukjoo Bae (Hanyang University), and Chen Zhang (Tsinghua University), and received 15 submissions. Finalist teams were ranked by precision.</p>
       <table class="ic-table">
         <thead><tr><th>Rank</th><th>Team</th><th>Members</th><th>Affiliation</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>Optiflow</td><td>Yilei Guo, Jianing Yang, Yulin Chen</td><td>Peking University; Tianjin University</td></tr>
+          <tr class="win"><td>1 <span class="ic-win">Winner</span></td><td>Optiflow</td><td>Yilei Guo, Jianing Yang, Yulin Chen</td><td>Peking University; Tianjin University</td></tr>
           <tr><td>2</td><td>Intelligent Manufacturing and Quality Engineering Laboratory</td><td>Longjun Zhang, Xiang Yang, Yinuo Zhou</td><td>City University of Hong Kong; USTC</td></tr>
           <tr><td>3</td><td>WT_Challenge</td><td>Yichun Wang</td><td>Tsinghua University</td></tr>
           <tr><td>4</td><td>Bingo</td><td>Hao Zhan, Yuxuan Li</td><td>East China University of Science and Technology; Tiangong University</td></tr>
-          <tr><td>5</td><td>Everpurple</td><td>Jeongwoo Yoo</td><td>UNIST, Republic of Korea</td></tr>
+          <tr><td>5</td><td>Everpurple</td><td>Jeongwoo Yoo</td><td>UNIST</td></tr>
           <tr><td>6</td><td>Elegance</td><td>Kaizong Bai, Zhuanqin Liu</td><td>Dongbei University of Finance and Economics</td></tr>
         </tbody>
       </table>
 
-      <h3>Organizers</h3>
-      <p>ICQSR 2026 was chaired by <strong>Jianjun Shi</strong> (Georgia Institute of Technology) and <strong>Jianping Wang</strong> (City University of Hong Kong), with honorary chairs <strong>C. F. Jeff Wu</strong> (Chinese University of Hong Kong, Shenzhen) and <strong>Lixin Tang</strong> (Northeastern University). The Organization Committee was co-chaired by Ershun Pan (Shanghai Jiao Tong University), Jian Liu (University of Arizona), and Zijun Zhang (City University of Hong Kong); the Program Committee by Sukjoo Bae (Hanyang University), Jian Liu, Xi Zhang (Peking University), and Zijun Zhang. We thank the committees, local arrangement team, and many volunteers who made the event possible.</p>
+      <p>The success of ICQSR 2026 was made possible by the kind and generous support of the Department of Data Science, City University of Hong Kong.</p>
     </section>
 
         <!-- ============ §07 SUBCOMMITTEES ============ -->
